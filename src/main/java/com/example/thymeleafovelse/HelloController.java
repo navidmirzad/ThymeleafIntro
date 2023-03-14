@@ -15,7 +15,6 @@ public class HelloController {
 
   LocalDate date = LocalDate.now();
 
-
   @GetMapping("")
   public String hello(@RequestParam String name, Model model) {
       model.addAttribute("greeting", "hello! " + name);
@@ -30,8 +29,14 @@ public class HelloController {
 
     @GetMapping("/weekday")
   public String weekDay(Model model) {
-      model.addAttribute("weekday", date.getDayOfWeek());
+      model.addAttribute("weekday", date.getDayOfWeek().toString());
       return "weekday";
+    }
+
+    @GetMapping("/fridayOrNot")
+    public String fridayorNot(Model model) {
+      model.addAttribute("fridayOrNot", date.getDayOfWeek().toString());
+      return "fridayOrNot";
     }
 
 
