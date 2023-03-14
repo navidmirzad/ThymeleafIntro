@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<td>
-    <span th:if="${weekday== 'Friday'}>ITS FRIDAY BABYYYY </span>
-       <span th:unless="${weekday=='Friday'}> It's not friday</span>
-</td>
+<h1>
+<span th:if="${weekday=='Friday'}">ITS FRIDAY BABYYYY </span>
+<span th:unless="${weekday=='Friday'}"> Not friday... </span>
+</h1>
 
 </body>
 </html>

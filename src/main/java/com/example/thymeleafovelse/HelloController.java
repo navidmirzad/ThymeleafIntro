@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 @Controller
@@ -29,15 +28,14 @@ public class HelloController {
 
     @GetMapping("/weekday")
   public String weekDay(Model model) {
-      model.addAttribute("weekday", date.getDayOfWeek().toString());
+      model.addAttribute("weekday", date.getDayOfWeek());
       return "weekday";
     }
 
     @GetMapping("/fridayOrNot")
     public String fridayorNot(Model model) {
-      model.addAttribute("fridayOrNot", date.getDayOfWeek().toString());
+      model.addAttribute("fridayOrNot", date.getDayOfWeek());
       return "fridayOrNot";
     }
-
 
 }
